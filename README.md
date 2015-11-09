@@ -1,7 +1,7 @@
 # YASS
 # Yet Another SDP Solver
 
-Currently it is a SDP solver prototype using Python. It follows the algorithm described in [1]
+Currently it is an SDP solver prototype using Python. It follows the algorithm described in [1]
 
 # Reference
 

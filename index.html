@@ -34,7 +34,20 @@
 <h1>
 <a id="yet-another-sdp-solver" class="anchor" href="#yet-another-sdp-solver" aria-hidden="true"><span class="octicon octicon-link"></span></a>Yet Another SDP Solver</h1>
 
-<p>Currently it is an SDP solver prototype using Python. It follows the algorithm described in [1]</p>
+<p>YASS is a Semidefinite solver using interior-point method. Currently it has two implementions using Python and C++ respectively. It is aimed to creat a lightweight but fast solver, which can be called from any device running</p>
+
+<h2>
+<a id="python-implementation" class="anchor" href="#python-implementation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Python implementation</h2>
+
+<p>Python implementation is based on <a href="http://www.numpy.org">Numpy</a>, which is a popular Python numerical computing package. </p>
+
+<h2>
+<a id="c-implementation" class="anchor" href="#c-implementation" aria-hidden="true"><span class="octicon octicon-link"></span></a>C++ implementation</h2>
+
+<p>C++ implementation is based on <a href="http://eigen.tuxfamily.org/index.php?title=Main_Page">Eigen</a>, a C++ template for linear algebra. Eigen is included in the package. So YASS can be compiled does not depend on any non-standard C++ library. It is easy to compile it at any platform where a standard C++ compiler is available.</p>
+
+<h1>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h1>
 
 <h1>
 <a id="reference" class="anchor" href="#reference" aria-hidden="true"><span class="octicon octicon-link"></span></a>Reference</h1>

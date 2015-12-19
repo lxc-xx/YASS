@@ -1,4 +1,4 @@
-# YASS
+# [YASS](http://lxc-xx.github.io/YASS/)
 # Yet Another SDP Solver
 YASS is a Semidefinite solver using interior-point method. Currently it has two implementions using Python and C++ respectively. It is aimed to creat a lightweight but fast solver, which can be called from any device running
 

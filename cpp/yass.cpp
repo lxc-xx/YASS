@@ -538,7 +538,7 @@ void sdp(Problem & prob)
     while (true)
     {
 
-        float alpha = 0.5;
+        float alpha = 0.8;
         theta = alpha * theta;
 
         Eigen::MatrixXf D;

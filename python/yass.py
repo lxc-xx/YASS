@@ -474,7 +474,7 @@ def main():
 if __name__ == "__main__":
 
     if len(sys.argv) != 4:
-        print "Usage: sdp.py problem_file init_file output"
+        print "Usage: yass.py problem_file init_file output"
     else:
         P = parse_problem_file(sys.argv[1])
         parse_initial_point(sys.argv[2],P, sparse=False)

@@ -1,5 +1,5 @@
-sdp: sdp.cpp
-	g++ -fopenmp -O3 -std=c++11 sdp.cpp -o sdp
+yass: yass.cpp
+	g++ -fopenmp -O3 -std=c++11 yass.cpp -o yass
 
 clean:
-	rm sdp
+	rm yass

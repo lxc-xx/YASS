@@ -167,6 +167,7 @@ int parse_input(char* prob_path, Problem & prob) //, int & mdim, int & nblock, i
         prob.nblock = nblock;
         prob.block_struct = block_struct;
         prob.block_base = block_base;
+        prob_file.close();
     }
     {
         return -1;
@@ -518,6 +519,7 @@ void sdp(Problem & prob)
 
     Eigen::MatrixXf X = prob.yMat;
     Eigen::MatrixXf C = -prob.F[0];
+    Eigen::VectorXf y;
     Eigen::MatrixXf S;
     Eigen::VectorXf b = -prob.c;
 
@@ -539,7 +541,6 @@ void sdp(Problem & prob)
         float alpha = 0.5;
         theta = alpha * theta;
 
-        Eigen::VectorXf y;
         Eigen::MatrixXf D;
         float err= solve_normal_equation( mdim, ndim, X, A, theta, C, D, y);
 
@@ -576,14 +577,29 @@ void sdp(Problem & prob)
     }
 
     prob.yMat = X;
+    prob.xMat = S;
+    prob.xVec = y;
 }
 
 
+void output_sol(Problem & prob, char * path)
+{
+    ofstream output(path);
+
+    output << "xVec" << endl;
+    output << prob.xVec << endl;
+    output << "xMat" << endl;
+    output << prob.xMat << endl;
+    output << "yMat" << endl;
+    output << prob.yMat << endl;
+    output.close();
+}
+
 int main(int argc, char *argv[])
 {
-    if (argc != 3)
+    if (argc != 4)
     {
-        cout << "Usage: sdp problem_file init_file" << endl;
+        cout << "Usage: sdp problem_file init_file output_file" << endl;
         exit(1);
     }
 
@@ -598,4 +614,6 @@ int main(int argc, char *argv[])
 
     cout << "Solving..." << endl;
     sdp(prob);
+    cout << "Writing down solution..." << endl;
+    output_sol(prob, argv[3]);
 }

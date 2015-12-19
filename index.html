@@ -35,7 +35,12 @@
 <h1>
 <a id="yet-another-sdp-solver" class="anchor" href="#yet-another-sdp-solver" aria-hidden="true"><span class="octicon octicon-link"></span></a>Yet Another SDP Solver</h1>
 
-<p>YASS is a Semidefinite solver using interior-point method. Currently it has two implementions using Python and C++ respectively. It is aimed to creat a lightweight and fast solver, which can be called from any device and environment.</p>
+<p>YASS is a Semidefinite programming (SDP) solver using interior-point method. Currently it has two implementions using Python and C++ respectively. It is aimed to creat a lightweight and fast solver, which can be called from any device and environment.</p>
+
+<h1>
+<a id="what-is-the-semidefinite-programming" class="anchor" href="#what-is-the-semidefinite-programming" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is the semidefinite programming.</h1>
+
+<p>Semidefinite programming is a convex optimization problem. Check this <a href="http://sdpa.sourceforge.net/whatissdp.pdf">doc</a> for introduction.</p>
 
 <h2>
 <a id="python-implementation" class="anchor" href="#python-implementation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Python implementation</h2>
@@ -49,6 +54,29 @@
 
 <h1>
 <a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h1>
+
+<p>Here is the example for solving truss1, a problem from SDPLIB</p>
+
+<h2>
+<a id="python" class="anchor" href="#python" aria-hidden="true"><span class="octicon octicon-link"></span></a>Python</h2>
+
+<div class="highlight highlight-source-shell"><pre>$ ./yass.py
+Usage: yass.py problem_file init_file output
+$ ./yass.py ../example/truss1.dat-s ../example/truss1.dat-ini solution</pre></div>
+
+<h2>
+<a id="c" class="anchor" href="#c" aria-hidden="true"><span class="octicon octicon-link"></span></a>C++</h2>
+
+<p>Compile</p>
+
+<div class="highlight highlight-source-shell"><pre><span class="pl-smi">$cd</span> cpp
+<span class="pl-smi">$make</span></pre></div>
+
+<p>Run</p>
+
+<div class="highlight highlight-source-shell"><pre>./yass
+Usage: sdp problem_file init_file output_file
+$ ./yass ../example/truss1.dat-s ../example/truss1.dat-ini solution</pre></div>
 
 <h1>
 <a id="speed" class="anchor" href="#speed" aria-hidden="true"><span class="octicon octicon-link"></span></a>Speed</h1>

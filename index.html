@@ -35,20 +35,76 @@
 <h1>
 <a id="yet-another-sdp-solver" class="anchor" href="#yet-another-sdp-solver" aria-hidden="true"><span class="octicon octicon-link"></span></a>Yet Another SDP Solver</h1>
 
-<p>YASS is a Semidefinite solver using interior-point method. Currently it has two implementions using Python and C++ respectively. It is aimed to creat a lightweight but fast solver, which can be called from any device running</p>
+<p>YASS is a Semidefinite solver using interior-point method. Currently it has two implementions using Python and C++ respectively. It is aimed to creat a lightweight and fast solver, which can be called from any device and environment.</p>
 
 <h2>
 <a id="python-implementation" class="anchor" href="#python-implementation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Python implementation</h2>
 
-<p>Python implementation is based on <a href="http://www.numpy.org">Numpy</a>, which is a popular Python numerical computing package. </p>
+<p>Python implementation is based on <a href="http://www.numpy.org">Numpy</a>, a popular Python numerical computing package. </p>
 
 <h2>
 <a id="c-implementation" class="anchor" href="#c-implementation" aria-hidden="true"><span class="octicon octicon-link"></span></a>C++ implementation</h2>
 
-<p>C++ implementation is based on <a href="http://eigen.tuxfamily.org/index.php?title=Main_Page">Eigen</a>, a C++ template for linear algebra. Eigen is included in the package. So YASS can be compiled does not depend on any non-standard C++ library. It is easy to compile it at any platform where a standard C++ compiler is available.</p>
+<p>C++ implementation is based on <a href="http://eigen.tuxfamily.org/index.php?title=Main_Page">Eigen</a>, a C++ template for linear algebra. Eigen is included in the package. So YASS can be compiled does not depend on any non-standard C++ library. It is easy to compile it at any platform where a C++ compiler is available.</p>
 
 <h1>
 <a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h1>
+
+<h1>
+<a id="speed" class="anchor" href="#speed" aria-hidden="true"><span class="octicon octicon-link"></span></a>Speed</h1>
+
+<p>YASS is keep evolving. At this stage, we are focused on the function development. Here is the current speed test on the sample problems from <a href="http://euler.nmt.edu/%7Ebrian/sdplib/sdplib.html">SDPLIB</a>. We compare it with another heavy-weight SDP solver <a href="http://sdpa.sourceforge.net">SDPA</a>.</p>
+
+<p>We tested the YASS C++, YASS Python, SDPA on problems of SDPLIB The experiment is running on a AWS EC2 <a href="https://aws.amazon.com/ec2/instance-types/">g2.8xlarge</a> instance.</p>
+
+<table>
+<thead>
+<tr>
+<th>Problem</th>
+<th>YASS C++</th>
+<th>YASS Python</th>
+<th>SDPA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>truss1</td>
+<td>0.524s</td>
+<td>0.722s</td>
+<td>0.117s</td>
+</tr>
+<tr>
+<td>truss4</td>
+<td>3.696s</td>
+<td>3.162s</td>
+<td>0.066s</td>
+</tr>
+<tr>
+<td>truss5</td>
+<td>53.484s</td>
+<td>25.418s</td>
+<td>1.802s</td>
+</tr>
+<tr>
+<td>control1</td>
+<td>N/A</td>
+<td>1.532s</td>
+<td>0.482s</td>
+</tr>
+<tr>
+<td>control2</td>
+<td>N/A</td>
+<td>24.446s</td>
+<td>0.665s</td>
+</tr>
+<tr>
+<td>control3</td>
+<td>N/A</td>
+<td>4m46.772s</td>
+<td>1.259s</td>
+</tr>
+</tbody>
+</table>
 
 <h1>
 <a id="reference" class="anchor" href="#reference" aria-hidden="true"><span class="octicon octicon-link"></span></a>Reference</h1>
